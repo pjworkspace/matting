@@ -57,7 +57,8 @@ $('button').click(() => {
         const ctx = convertImageToCanvas(img).getContext('2d')
         const imgData = ctx.getImageData(0, 0, width, height)
 
-
+        console.time('时间1')
+        console.time('时间2')
         // let imgDataList = makeArray(width * height).map(i => {
         window.imgDataList = makeArray(width * height).map(i => {
             const [r, g, b, a] = imgData.data.slice(i * 4, (i + 1) * 4)
@@ -69,10 +70,12 @@ $('button').click(() => {
         .filter(v => sum(['r', 'g', 'b'].map(v2 => v[v2])) <= 240 * 3)
         // .filter(v => min(['r', 'g', 'b'].map(v2 => 255 - v[v2])) >= 10)
         // console.log(imgDataList)
+        console.timeEnd('时间1')
         const pixelLeft = min(imgDataList.map(v => v.x))
         const pixelRight = max(imgDataList.map(v => v.x))
         const pixelTop = min(imgDataList.map(v => v.y))
         const pixelBottom = max(imgDataList.map(v => v.y))
+        console.timeEnd('时间2')
 
         // console.log(pixelLeft, pixelRight, pixelTop, pixelBottom)
         // console.log(pixelLeft, pixelRight - pixelLeft, pixelTop, pixelBottom - pixelTop)
