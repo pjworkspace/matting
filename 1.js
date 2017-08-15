@@ -66,7 +66,7 @@ $('button').click(() => {
             return {r, g, b, a, x, y}
         })
         .filter(v => v.a === 255)
-        .filter(v => sum(['r', 'g', 'b'].map(v2 => v[v2])[v.r, v.g, v.b]) <= 240 * 3)
+        .filter(v => sum(['r', 'g', 'b'].map(v2 => v[v2])) <= 240 * 3)
         // .filter(v => min(['r', 'g', 'b'].map(v2 => 255 - v[v2])) >= 10)
         // console.log(imgDataList)
         const pixelLeft = min(imgDataList.map(v => v.x))
