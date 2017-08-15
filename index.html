@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+    body {
+        margin: 0;
+    }
+    canvas, img {
+        display: block;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 20px rgba(102, 175, 233, 0.6);
+    }
+    .pic {
+        overflow: hidden;
+        padding: 10px;
+    }
+    .pic div {
+        float: left;
+        width: 45%;
+        padding: 10px 0;
+    }
+    .pic div:last-child {
+        margin-left: 10px;
+    }
+    </style>
+</head>
+<body>
+
+<select>
+    <option value="500x300.png">500x300.png</option>
+    <option value="200x200.png">200x200.png</option>
+    <option value="demo.jpg">demo.jpg</option>
+    <option value="filltest.jpg">filltest.jpg</option>
+    <option value="bao.png">bao.png</option>
+    <option value="bai.jpg">bai.jpg</option>
+    <option value="colors.png">colors.png</option>
+</select>
+
+
+<button>抠图</button>
+
+<div class="pic">
+    <div id="source"></div>
+    <div id="target"></div>
+</div>
+
+
+<!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+<script src="jq.js"></script>
+<script src="1.js"></script>
+
+</body>
+</html>
